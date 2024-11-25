@@ -16,8 +16,12 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(activities.items) { item in
-                    HStack {
-                        Text(item.name)
+                    NavigationLink {
+                        ActivityDetailView(activity: item)
+                    } label: {
+                        HStack {
+                            Text(item.name)
+                        }
                     }
                 }
                 .onDelete(perform: removeItems)
