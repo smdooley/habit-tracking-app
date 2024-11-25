@@ -8,7 +8,15 @@
 import Foundation
 
 struct Activity: Codable, Identifiable {
-    var id = UUID()
+    let id: UUID
     let name: String
     let description: String
+    let completed: Int
+    
+    init(name: String, description: String) {
+        self.id = UUID()
+        self.name = name
+        self.description = description
+        self.completed = 0
+    }
 }

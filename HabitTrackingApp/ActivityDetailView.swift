@@ -13,6 +13,7 @@ struct ActivityDetailView: View {
     var body: some View {
         VStack(spacing: 10) {
             Text(activity.description)
+            Text("Completed: \(activity.completed)")
         }
         .navigationTitle(activity.name)
         .navigationBarTitleDisplayMode(.inline)
@@ -20,7 +21,7 @@ struct ActivityDetailView: View {
 }
 
 #Preview {
-    let activity: Activity = Activity(id: UUID(), name: "Activity 101", description: "Nullam est leo, hendrerit a massa non, sodales vehicula sapien.")
+    let activity: Activity = Activity(name: "Activity 101", description: "Nullam est leo, hendrerit a massa non, sodales vehicula sapien.")
     
     return ActivityDetailView(activity: activity)
 }
