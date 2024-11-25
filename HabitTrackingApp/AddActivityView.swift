@@ -23,12 +23,20 @@ struct AddActivityView: View {
             }
             .navigationTitle("Add activity")
             .toolbar {
-                Button("Save") {
-                    let item = Activity(name: name, description: description)
-                    
-                    activities.items.append(item)
-                    
-                    dismiss()
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Save") {
+                        let item = Activity(name: name, description: description)
+                        
+                        activities.items.append(item)
+                        
+                        dismiss()
+                    }
+                }
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
                 }
             }
         }
