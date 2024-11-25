@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Activity: Codable, Identifiable {
+struct Activity: Codable, Identifiable, Equatable {
     let id: UUID
     let name: String
     let description: String
-    let completed: Int
+    var completed: Int
     
     init(name: String, description: String) {
         self.id = UUID()
